@@ -1,0 +1,166 @@
+/*=== Table of Contents:
+
+    0. Variables
+    1. Reset
+    2. Global Styles
+    3. Layout
+    4. Components
+
+===*/
+
+/*------------------- 
+  0. Variables
+  -------------------*/ 
+  $primaryFont : 'Poppins', sans-serif;
+
+  $primaryRed: hsl(0, 78%, 62%);
+  $primaryCyan: hsl(180, 62%, 55%);
+  $primaryOrange: hsl(34, 97%, 64%);
+  $primaryBlue: hsl(212, 86%, 64%);
+
+  $neutralDarkBlue: hsl(234, 12%, 34%);
+  $neutralGreyBlue: hsl(229, 6%, 66%);
+  $neutralLightGrey: hsl(0, 0%, 98%);
+
+
+/*------------------- 
+  1. Reset - Eric Meyer's Reset 
+  -------------------*/ 
+@import 'reset.scss';
+
+
+/*---------------------- 
+    2. Global Styles 
+-----------------------*/ 
+  html {
+    height: 100%;
+    font-size: 93.75%;
+  }
+
+  body {
+    height: 100%;
+    min-height: 100vh;
+    font-family: $primaryFont;
+  }
+  
+
+
+/*------------------- 
+    3. Layout 
+--------------------*/
+  .page-wrapper {
+    min-height: 100vh;
+    background: $neutralLightGrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .header-container {
+    text-align: center;
+    max-width: 34rem;
+    margin-top: 2rem;
+  }
+
+  .main-container {
+    flex-grow: 1;  /*pushes footer to bottom of page*/
+    display:flex;
+    margin-top: 2rem;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+  }
+
+  footer { 
+    padding: 2rem;
+  }
+    
+  
+/*-------------------- 
+    4. Components
+----------------------*/
+  
+  /* header */
+
+  .slogan-1 {
+    font-size: 2.4rem;
+    color: $neutralDarkBlue;
+    font-weight: 200;
+    margin-bottom: 1rem;
+  }
+
+  .slogan-2 {
+    font-size: 2.4rem;
+    color: $neutralDarkBlue;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+
+  }
+
+  .description {
+    color: $neutralGreyBlue;
+    line-height: 1.5rem;
+  }
+
+  /*card component */
+
+  .card-component {
+    height: 17rem;
+    max-width: 24rem;
+    padding: 2rem;
+    position: relative;
+    background: #FFF;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2rem 6rem -4rem darken($primaryBlue, 30%);
+    margin: 1rem;
+
+    h3 {
+      color:$neutralDarkBlue;
+      font-weight: 600;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color:$neutralGreyBlue;
+      font-size: 0.9rem;
+      line-height: 1.5rem;
+    }
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 2rem;
+    }
+  }
+
+
+.supervisor {
+  border-top: 5px solid $primaryCyan;
+}
+.team-builder {
+  border-top: 5px solid $primaryRed;
+} 
+.karma {
+  border-top: 5px solid $primaryOrange;
+} 
+.calculator {
+  border-top: 5px solid $primaryBlue;
+}
+
+/* media query for mobile */
+
+@media(max-width: 1024px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+  .header-container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
